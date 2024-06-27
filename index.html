@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="https://www.digitalocean.com/community/tutorials/hibernate-tutorial-for-beginners">Hibernate</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Glossary/Java">Java</a>
+                        <a href="tables.html">Create Table</a>
+                        <a href="userinfo.html">Create User</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <h1>SBA Homework</h1>
+        <div class="container">
+        <img src="images/apple.svg" alt="Example Image" width="250px" height="auto" >
+        <video width="500px" height="500px" controls loop>
+            <source src="images/modern.mp4" type="video/mp4">
+        </video>
+        <p class="bottom-text"></p>
+
+
+        <style>
+            body {
+                background-image: url('images/space2.png'); /* Path to your space background image */
+                background-size: cover; /* Ensures the image covers the entire background */
+                background-repeat:repeat; /* Prevents the image from repeating */
+                background-position: center; /* Centers the image */
+            }
+            header, main, footer {
+                background: rgba(0,0,0, 0.8); /* Semi-transparent white background for readability */
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px;
+            }
+            header {
+                position: sticky;
+                top: 0;
+            }
+            .container {
+                display: flex;
+                justify-content: space-between; /* Distributes space between items */
+            }
+            .item {
+                flex: 1;
+                margin: 10px; /* Adds space between the items */
+            }
+            img, video {
+                max-width: 100%; /* Ensures media fits within their containers */
+                height: auto;
+            }
+        </style>
+
+        <img src="images/aliens.jpg" alt="Example Image" width="250px" height="auto" >
+        <video width="500px" height="500px" controls loop>
+            <source src="images/space.mp4" type="video/mp4">
+        </video>
+        <p>Dreams are possible with great effort <strong>,BOLD attitude</strong> and <em>italic</em> text.</p>
+        
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

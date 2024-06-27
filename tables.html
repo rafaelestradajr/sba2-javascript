@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Dynamic Table</title>
+  <style>
+    table {
+      
+      border:1px solid gray;      
+      width: 100%;
+      
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="https://www.digitalocean.com/community/tutorials/hibernate-tutorial-for-beginners">Hibernate</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Glossary/Java">Java</a>
+                        <a href="userinfo.html">Create User</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <h1>Tables are created here</h1>
+  <div id="tableContainer"></div>
+
+
+  <h2>Add New Entry</h2>
+  <label for="name">Name:</label>
+  <input type="text" id="name" placeholder="Enter name">
+  <label for="age">Age:</label>
+  <input type="number" id="age" placeholder="Enter age">
+  <label for="city">City:</label>
+  <input type="text" id="city" placeholder="Enter city">
+  <button onclick="addRow()">Add to Table</button>
+
+
+
+
+  <script>
+    // Sample data structure
+    const data = [
+      { name: "Eduardo Garcia", age: 35, city: "Austin" },
+      { name: "Jessica Smith", age: 25, city: "Seguin" },
+      { name: "Amber Johnson", age: 20, city: "Chicago" }
+    ];
+
+    // Function to create and populate the table
+    function createTable(data) {
+      const tableContainer = document.getElementById('tableContainer');
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tbody = document.createElement('tbody');
+
+      // Create table headers
+      const headers = Object.keys(data[0]);
+      const tr = document.createElement('tr');
+      headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+
+      // Create table rows
+      data.forEach(item => {
+        const tr = document.createElement('tr');
+        headers.forEach(header => {
+          const td = document.createElement('td');
+          td.textContent = item[header];
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      tableContainer.appendChild(table);
+    }
+  
+
+    // Function to add a new row to the table
+    function addRow() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const city = document.getElementById('city').value;
+
+            if (name && age && city) {
+                data.push({ name: name, age: parseInt(age), city: city });
+                createTable(data);
+
+                // Clear input fields
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+                document.getElementById('city').value = '';
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+    
+
+    // Call the function to create the table
+    createTable(data);
+  
+    
+  </script>
+   <footer>
+    <p>&copy; 2024 My Website</p>
+</footer>
+</body>
+</html>

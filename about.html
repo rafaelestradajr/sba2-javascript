@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* High-tech gradient background */
+            color: #ffffff; /* White text for contrast */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, ul, li, .dropdown-content a {
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        main {
+            padding: 20px;
+        }
+        select, option {
+            color: #000000;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="https://www.digitalocean.com/community/tutorials/hibernate-tutorial-for-beginners">Hibernate</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Glossary/Java">Java</a>
+                        <a href="tables.html">Create Table</a>
+                        <a href="userinfo.html">Create User</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>About Section</h1>
+        <label for="aboutSelect">Choose a section:</label>
+        <select id="aboutSelect" onchange="displayAboutSection()">
+            <option value="none">--Select--</option>
+            <option value="company">Company</option>
+            <option value="team">Team</option>
+            <option value="careers">Careers</option>
+        </select>
+        <div id="aboutContent"></div>
+
+        <p class="codepen" data-height="500" data-default-tab="css" data-slug-hash="OGwmOV" data-pen-title="Only CSS: 3D Scan" data-preview="true" data-editable="true" data-user="YusukeNakaya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/YusukeNakaya/pen/OGwmOV">
+            Only CSS: 3D Scan</a> by Yusuke Nakaya (<a href="https://codepen.io/YusukeNakaya">@YusukeNakaya</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <script src="main.js"></script>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>
